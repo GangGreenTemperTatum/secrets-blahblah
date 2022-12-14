@@ -1,5 +1,49 @@
+When you use the AWS API, as opposed to logging into the console with your web browser, you use an access key and secret key.
+
 [default]
-aws_access_key_id = AKIAXYZZYXXYZZYXXYZZ
-aws_secret_access_key = Tg0-ZJ*bp9hEJYig*qmjk6EbAhJWZvp7tGuG8/ide
+Access keys look like:
+
+aws_access_key_id = AKIAJSIE27KKMHXI3BJQ
+aws_access_key_id = AKIAIYZZYXXYZZYXXYZA
+aws_access_key_id = ASIAJLVYNHUWCPKOPSYQ
+aws_access_key_id = ASIAJ73N6GYZRLJCM52Q
+aws_access_key_id = ASIAIVZZF5WVGTXTJ2TQ
+aws_access_key_id = ASIAJAZ4HRG3CPA63XEQ
+aws_access_key_id = ASIAJGGB7IYTTL53QNBQ
+aws_access_key_id = ASIAJZ3DXJKMP7MG3EKA
+aws_access_key_id = ASIAIQAP7NCOV4IOP6HQ
+aws_access_key_id = ASIAISJIZDYHNH3YZ4PA
+aws_access_key_id = ASIAIQKNVCOQF4IQDSFQ
+aws_access_key_id = ASIAJCVIKK2Z6PAUBDEQ
+
+When a session token is involved, such that the keys will all expire, the access key begins with the prefix ASIA, otherwise it begins with AKIA.
+It seems that Active Keys == Prepended with "AKIA"
+It seems that DeActivated Keys/Expired == Prepended with "ASIA"
+The 5th letter is always I or J and the last letter is always A or Q, so each of those characters only gives one bit of information.
+AWS IAM Keys are always ==20 characters in length.
+
+Secret keys looks like:
+
+The only non-letter and non-number values are “+” and “/”, so these seem to be base64 encoded. The base64 decoded values appear completely random, providing 30 bytes of random, or 2240 possible values.
+
+aws_secret_access_key = DcCc9H6oCkGUSp3Rhmsx8NIfVG8kO2T/3jORxuZY
+aws_secret_access_key = Rh30BNyj+qNI4ftYRteoZbHJ3X4Ln71QtZkRXzJ9
+aws_secret_access_key = pARhvm1GmHyvLydUtFNCCMIIu4VEyaZNo9MbR3IJ
+aws_secret_access_key = XKeL0CrwNSoa1li5b9iWEi6wxI2EsQoj0A/hTDnq
+aws_secret_access_key = JO87AJYekC6mYhZ32zLDkRmxqlPGfJi9Wyx6E5AB
+aws_secret_access_key = MKNeSIXumjpUUHXhvz97exACdQ2gYp1TpQZc5jaq
+aws_secret_access_key = SyoEbmT4AUdbcXhdsG4KWr2yGS/9BDXPs4qHbamI
+aws_secret_access_key = FTNBND5Q6mQyH6xGEe27V0Pce/03EShqVZTTsLzF
+aws_secret_access_key = ndaHWM5h16/sgQTPNwjuRrq6HHdBwtQ+HpZ75V/F
+aws_secret_access_key = mgJteE7dZgSLC2eo2vKsAUWRSnchrWzCRnoDpUSJ
+
+When using IAM roles, or if you request a session token with the command aws sts get-session-token, you’ll get an access key, secret key, and a session token. The session token looks like:
+
+Session-tokens are base64-encoded and look like:
+
+FQoDYXdzEPP//////////wEaDNiq11oUzqitIGSp7CKsAUoecwG4UGUhDYbo+leOoCr69T3zjxc3P4P0GM5nnHk7GX/qWtHngiwZ+qKTMsaB2LjyyR47CuAe8GZi2UKEk6aL5wyI3ZCZhUe+lRCBnG7bfPMtJ+70Ojyy6WfMdWaQwExFa/F8WfP2vChsJ3rO5zioqWkzT7qFyBK+qqhSFF7dmKzdYHW3mtfILjqeoLRmcjouNRGHdI/zdA6lZtiRKP4X0uDcEKzsfg/Z8Koow4Sl2QU=
+
+Bytes 4-6 are the word aws, and bytes 9-16 are the value ff.
+
 output = json
 region = us-west-2
