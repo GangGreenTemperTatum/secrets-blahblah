@@ -1,0 +1,4 @@
+From observation, GitHub PAT (Personal Access Token's) are prepended with "ghp_", followed by 36 random characters composing of lowercase and uppercase letters
+Randomly generated example:
+
+-H 'Authorization: token ghp_APoRCYPtZNgRjEeHacraggWvqtTWCebzmaef' \
