@@ -1,0 +1,11 @@
+another one - a1b2345c-d6e7.cloud.databricks.com'
+
+{
+  "token_value": "dapi1a2b3c45d67890e1f234567a8bc9012d",
+  "token_info": {
+    "token_id": "1234567890a12bc3456de789012f34ab56c78d9012e3fabc4de56f7a89b012c3",
+    "creation_time": 1626286601651,
+    "expiry_time": 1634062601651,
+    "comment": "This is an example token"
+  }
+}
