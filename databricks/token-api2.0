@@ -9,3 +9,5 @@ another one - a1b2345c-d6e7.cloud.databricks.com'
     "comment": "This is an example token"
   }
 }
+
+https://docs.databricks.com/dev-tools/api/latest/tokens.html#:~:text=with%20the,This%20example%20specifies%2090%20days.
