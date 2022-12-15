@@ -1,0 +1,3 @@
+https://settling-glade-9532.tines.com/webhook/2e73fb32b357e5f39368ea91b7563a16/0cd1f83a4b29f267394697f619468795
+
+Regex = https:\/\/[a-z]{1,10}-[a-z]{1,10}-[0-9]{4}.tines.com\/webhook\/[a-z0-9]{32}\/[a-z0-9]{32}
