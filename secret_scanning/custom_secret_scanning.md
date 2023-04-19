@@ -1,6 +1,6 @@
 # [GitHub Advanced Security - Custom Patterns for Secret Scanning](https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/)
 
-## Below is a list of my custom set of Regex expressions for custom patterns for matching secrets:
+## Below is a list of my custom set of (Regular) Regex expressions for custom patterns for matching secrets:
 
 * `(?:\\s|=|:|\"|^)AKC[a-zA-Z0-9]{10,}`: **`Artifactory_API_Token`**,
 * `(?:\\s|=|:|\"|^)AP[\\dABCDEF][a-zA-Z0-9]{8,}`: **`Artifactory_Password`**,
@@ -76,3 +76,16 @@
 * `(?i)\\b(hvs\\.[a-z0-9_-]{90,100})(?:['|\\\"|\\n|\\r|\\s|\\x60|;]|$)`: **`HCP_Vault_Service_Token`**,
 * `https:\\/\\/[a-z]{1,10}-[a-z]{1,10}-[0-9]{4}.tines.com`: **`Tines_Tenant`**,
 * `https:\\/\\/[a-z]{1,10}-[a-z]{1,10}-[0-9]{4}.tines.com\\/webhook\\/[a-z0-9]{32}\\/[a-z0-9]{32}`: **`Tines_Webhook`**
+
+## To convert a regular expression to a Hyperscan regular expression, you can follow these steps:
+
+1. Remove any enclosing quotes around the regular expression.
+2. Remove any capturing groups from the regular expression.
+3. Remove any non-capturing groups from the regular expression.
+4. Remove any parentheses from the regular expression.
+5. Replace any character classes with their corresponding Hyperscan regular expression.
+6. Remove any backslashes before special characters (\, ^, $, ., |, ?, *, +, (, ), [, {, and }), unless they are needed to escape a character in the regular expression.
+7. Replace any repeating groups with their corresponding Hyperscan regular expression.
+8. Replace any special characters with their corresponding Hyperscan regular expression.
+9. Add any Hyperscan-specific flags to the regular expression, such as case-insensitivity or dotall mode, if needed.
+10. Use the modified regular expression in Hyperscan functions such as `hs_compile` and `hs_scan`.
